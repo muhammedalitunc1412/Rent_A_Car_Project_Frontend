@@ -1,0 +1,25 @@
+
+li{
+    margin-bottom: 10px;
+}
+ul{
+    margin-top: 30px;
+}
+
+.card{
+    background-color:black;
+    color:red;
+    box-shadow: 10px 15px 6px rgba(0, 0, 0, 0.6) ;
+    margin-top: 30px;
+   
+}
+.cards{
+    height: 714px;
+}
+.delete{
+    position:absolute;
+    left: 365px;
+    top:5px;
+    border-radius: 15px;
+    background-color: red;
+}

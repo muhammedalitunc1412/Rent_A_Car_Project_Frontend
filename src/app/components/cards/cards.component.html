@@ -1,0 +1,26 @@
+<div class="cards">
+<h1>
+    Kredi Kartlarım
+</h1  >
+  <div class="cards row">
+    <div *ngFor="let card of cards" class="col-md-4" style="margin-left: 10px">
+      
+      <div class="card" style="border-radius: 15px; width: 400px; height: 235px;">
+        <button class="delete" (click)="delete(card)"><i class="fas fa-times"></i></button>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+              <li style="text-align: center; margin-top: 50px;" class="list-group fs-2"> {{card.cardNumber.replace(card.cardNumber.slice(2,12),"**********")}}</li>
+            <li style="margin-left: 120px; margin-top:0px;" class="list-group">{{ card.expirationMonth }}/{{ card.expirationYear }}</li>
+            <li style="margin-left:0px; margin-top:0px;" class="list-group fs-5">
+              {{ card.cardOwner }}
+            </li>
+            <img
+              style="width: 55px; right: 10px; bottom: 0; position: absolute;"
+              src="https://img.icons8.com/color/48/000000/mastercard-logo.png"
+            />
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

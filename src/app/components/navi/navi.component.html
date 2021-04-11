@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-xxl" >
+  <div class="container-fluid" style="margin-left: 320px;">
+   <div class="logo">
+    <img src="\assets\images\logo.png">
+  </div>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a  class="nav-link active" aria-current="page"style="color:black;margin-left:10px" routerLink="">Ana Sayfa</a>
+        </li>
+        <li class="nav-item">
+          <a  class="nav-link" style="color:black" routerLink="/cars">Araç Listesi</a>
+        </li>
+       <!-- <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>-->
+      </ul>
+      <!-- <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
+      <div *ngIf="!isAuthenticated()">
+        <button  class="btn mybtn" routerLink="/register">Üye Ol</button>
+        <button style="margin-right:300px; background-color:#3f3f3f; color:#f5ca29;" class="btn mybtn" routerLink="/login">Giriş Yap</button>
+      </div>
+      <div *ngIf="isAuthenticated()">
+        <div class="nav-item dropdown" style="margin-right:300px;">
+          <a style="color:#3f3f3f;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i style="margin-right: 10px;" class="fas fa-user-circle"></i><strong *ngIf="user">{{user.firstName}} {{user.lastName}}</strong>
+          </a>
+          <ul style="background-color:#3f3f3f; margin-left:35px;" class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li ><a class="dropdown-item" routerLink="profile" style="color: white;"><i class="fas fa-users-cog"></i> Profil</a></li>
+            <li><a class="dropdown-item" routerLink="cards" style="color: white;"><i class="fas fa-credit-card"></i> Kayıtlı Kartlarım</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="logOut()" style="color: white;"><i class="fas fa-sign-out-alt"></i> Çıkış</a></li>
+          </ul>
+          
+        </div>
+       
+      </div>
+     
+    </div>
+ 
+  </div>
+  
+</nav>

@@ -1,0 +1,135 @@
+<div class="container" style="margin-bottom: 100px">
+  <div class="row">
+    <div class="col-md-3">
+      <br />
+      <app-brand></app-brand>
+
+      <br />
+      <app-color></app-color>
+      <br />
+    </div>
+    <div class="col-md-9" style="margin-top: 23px">
+      <app-car-filter></app-car-filter>
+      <!-- <div class="row">
+        <input
+          [(ngModel)]="filterCar"
+          type="text"
+          class="form-control"
+          id="filterCar"
+          placeholder="Model giriniz."
+          style="width: 200px;"
+        />
+        
+      </div> -->
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div *ngFor="let car of cars | carPipe: filterCar" class="col">
+          <div *ngIf="checkAdmin()" class="update"><button routerLink="/cars/update/{{ car.carId }}" class="fas fa-cog"></button></div>
+          <a routerLink="/cars/cardetail/{{ car.carId }}">
+            <div class="card">
+              <div class="card-image">
+                <img
+                  *ngIf="car.imagePath != null"
+                  src="https://localhost:44393/{{ car.imagePath }}"
+                  class="d-block w-100"
+                  alt="..."
+                />
+                <img
+                  *ngIf="car.imagePath == null"
+                  src="https://localhost:44393/Images\dene.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+
+              <div class="card-text" style="margin-left: 10px">
+                <h3>{{ car.modelYear }}</h3>
+                <h2>{{ car.brandName }} {{ car.carName }}</h2>
+              </div>
+
+              <div class="card-stats">
+                <div class="stat">
+                  <div class="value"></div>
+                </div>
+                <div class="stat">
+                  <div class="value">{{ car.dailyPrice }}₺</div>
+                </div>
+                <div class="stat">
+                  <div class="value"></div>
+                </div>
+              </div>
+              <div class="details">
+                <div class="center">
+                  <h1>
+                    Gerekli Findex Puanı:<br /><span>{{ car.minFindex }}</span>
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+ <div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <br />
+      <app-color></app-color>
+      <br />
+      <app-brand></app-brand>
+      <br />
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <input
+          [(ngModel)]="filterCar"
+          type="text"
+          class="form-control"
+          id="filterCar"
+          placeholder="Model giriniz."
+        />
+        <app-car-filter></app-car-filter>
+      </div>
+      
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div *ngFor="let car of cars | carPipe: filterCar" class="col">
+          <div style="margin-top: 20px" class="card">
+            <div
+              id="carouselExampleControls"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img *ngIf="car.imagePath!=null"src="https://localhost:44393/{{car.imagePath}}" class="d-block w-100" alt="..." />
+                  <img *ngIf="car.imagePath==null" src="https://localhost:44393/Images\defaultcar.png" class="d-block w-100" alt="..." />
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ car.carName }}</h5>
+              <p class="card-text">{{ car.brandName }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{ car.colorName }}</li>
+      
+              <li class="list-group-item">{{ car.modelYear }}</li>
+              <li class="list-group-item">{{ car.description }}</li>
+            </ul>
+            <div class="card-body">
+              <a routerLink="/cars/cardetail/{{ car.carId }}" class="card-link">Detaylar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+      
+
+</div>  -->

@@ -1,0 +1,69 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+a{
+  text-decoration: none;
+}
+.register{
+  position:absolute;
+  top:100px;
+  right: 750px;
+  height: 600px;
+  width: 400px;
+  background-color: #3f3f3f;
+  border-radius: 15px;
+}
+.button{
+  width: 150px;
+  margin-left: 125px;
+  background-color:#f5ca29 ;
+  border-radius: 15px;
+}
+.logo{
+  width: 105px;
+  height: 105px;
+  position:absolute;
+  top:50px;
+  right: 150px;
+}
+.anahtar{
+  position: absolute;
+  top:100px;
+  right:0px;
+}
